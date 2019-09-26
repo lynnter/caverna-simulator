@@ -1,7 +1,7 @@
 {
   "name": "caverna-simulator",
   "version": "0.1.0",
-  "homepage" : "http://lynnjamin.github.io/caverna-simulator",
+  "homepage": "http://lynnjamin.github.io/caverna-simulator",
   "private": true,
   "dependencies": {
     "react": "^16.9.0",
