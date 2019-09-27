@@ -11,65 +11,170 @@ class App extends Component {
               [
                 {
                   id: 1,
+                  isForest: false,
                   isMeadow: true,
+                  isField: false,
+                  hasPasture: false,
+                  hasStable: false,
+                  stableCount: 0,
+                  sheepCount: 0,
+                  donkeyCount: 0,
+                  boarCount: 0,
+                  cowCount: 0,
                 },
                  {
                   id: 2,
-                  isMeadow: true
+                  isForest: true,
+                  isMeadow: false,
+                  isField: false,
+                  hasPasture: false,
+                  hasStable: false,
+                  stableCount: 0,
+                  sheepCount: 0,
+                  donkeyCount: 0,
+                  boarCount: 0,
+                  cowCount: 0,
                 },
                 {
                   id: 3,
-                  isMeadow: true
+                  isForest: true,
+                  isMeadow: false,
+                  isField: false,
+                  hasPasture: false,
+                  hasStable: false,
+                  stableCount: 0,
+                  sheepCount: 0,
+                  donkeyCount: 0,
+                  boarCount: 0,
+                  cowCount: 0,
               }
               ], 
               [{
-                  id: 3,
-                  isMeadow: true
-                },
-                {
                   id: 4,
-                  isMeadow: true
+                  isForest: true,
+                  isMeadow: false,
+                  isField: false,
+                  hasPasture: false,
+                  hasStable: false,
+                  stableCount: 0,
+                  sheepCount: 0,
+                  donkeyCount: 0,
+                  boarCount: 0,
+                  cowCount: 0,
                 },
                 {
                   id: 5,
-                  isMeadow: true
-                }
-              ], 
-              [
+                  isForest: true,
+                  isMeadow: false,
+                  isField: false,
+                  hasPasture: false,
+                  hasStable: false,
+                  stableCount: 0,
+                  sheepCount: 0,
+                  donkeyCount: 0,
+                  boarCount: 0,
+                  cowCount: 0,
+                },
                 {
                   id: 6,
-                  isMeadow: true
-                },
-                 {
-                  id: 7,
-                  isMeadow: true
-                },
-                {
-                  id: 8,
-                  isMeadow: true
+                  isForest: true,
+                  isMeadow: false,
+                  isField: false,
+                  hasPasture: false,
+                  hasStable: false,
+                  stableCount: 0,
+                  sheepCount: 0,
+                  donkeyCount: 0,
+                  boarCount: 0,
+                  cowCount: 0,
                 }
               ], 
               [
                 {
-                  id: 9,
-                  isMeadow: true
-                },
-                {
-                  id: 10,
-                  isMeadow: true
+                  id: 7,
+                  isForest: true,
+                  isMeadow: false,
+                  isField: false,
+                  hasPasture: false,
+                  hasStable: false,
+                  stableCount: 0,
+                  sheepCount: 0,
+                  donkeyCount: 0,
+                  boarCount: 0,
+                  cowCount: 0,
                 },
                  {
+                  id: 8,
+                  isForest: true,
+                  isMeadow: false,
+                  isField: false,
+                  hasPasture: false,
+                  hasStable: false,
+                  stableCount: 0,
+                  sheepCount: 0,
+                  donkeyCount: 0,
+                  boarCount: 0,
+                  cowCount: 0,
+                },
+                {
+                  id: 9,
+                  isForest: true,
+                  isMeadow: false,
+                  isField: false,
+                  hasPasture: false,
+                  hasStable: false,
+                  stableCount: 0,
+                  sheepCount: 0,
+                  donkeyCount: 0,
+                  boarCount: 0,
+                  cowCount: 0,
+                }
+              ], 
+              [
+                {
+                  id: 10,
+                  isForest: true,
+                  isMeadow: false,
+                  isField: false,
+                  hasPasture: false,
+                  hasStable: false,
+                  stableCount: 0,
+                  sheepCount: 0,
+                  donkeyCount: 0,
+                  boarCount: 0,
+                  cowCount: 0,
+                },
+                {
                   id: 11,
-                  isMeadow: true
+                  isForest: true,
+                  isMeadow: false,
+                  isField: false,
+                  hasPasture: false,
+                  hasStable: false,
+                  stableCount: 0,
+                  sheepCount: 0,
+                  donkeyCount: 0,
+                  boarCount: 0,
+                  cowCount: 0,
+                },
+                 {
+                  id: 12,
+                  isForest: true,
+                  isMeadow: false,
+                  isField: false,
+                  hasPasture: false,
+                  hasStable: false,
+                  stableCount: 0,
+                  sheepCount: 0,
+                  donkeyCount: 0,
+                  boarCount: 0,
+                  cowCount: 0,
                 }
               ]
     ],
-      isForest : true,
-      isField : false,
     }
 
   render() {
-  console.log("hereee", this.state.grid)
     return (
       <React.Fragment>
       <div>
