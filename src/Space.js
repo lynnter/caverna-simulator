@@ -3,24 +3,14 @@ import React, { Component } from 'react'
 export class Space extends Component {
 
   render() {
-    const forest = this.props.grid.isForest;
-    const meadow = this.props.grid.isMeadow;
-    const field = this.props.grid.isField;
-    const pasture = this.props.grid.isPasture;
+    let tileType = this.props.grid.tileType;
 
     return (
       <div className="GridStyle">{this.props.grid.id} 
           <br />
         
-          <b>{forest ? 'Forest' : null}</b> 
-          <br />
-          <b>{meadow ? 'Meadow' : null}</b> 
-          <br />
-          <b>{field ? 'Field' : null}</b> 
-          <br />
-          <b>{pasture ? 'Pasture' : null}</b> 
-        
-
+        <b>{tileType ? tileType : null}</b> 
+      
         <div>
           sheeps: {this.props.grid.sheepCount}
         </div>

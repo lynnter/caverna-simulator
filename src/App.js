@@ -11,9 +11,7 @@ class App extends Component {
               [
                 {
                   id: 1,
-                  isForest: false,
-                  isMeadow: true,
-                  isField: false,
+                  tileType: 'meadow',
                   hasPasture: false,
                   hasStable: false,
                   stableCount: 0,
@@ -24,9 +22,7 @@ class App extends Component {
                 },
                  {
                   id: 2,
-                  isForest: true,
-                  isMeadow: false,
-                  isField: false,
+                  tileType: 'forest',
                   hasPasture: false,
                   hasStable: false,
                   stableCount: 0,
@@ -37,9 +33,7 @@ class App extends Component {
                 },
                 {
                   id: 3,
-                  isForest: true,
-                  isMeadow: false,
-                  isField: false,
+                  tileType: 'forest',
                   hasPasture: false,
                   hasStable: false,
                   stableCount: 0,
@@ -51,9 +45,7 @@ class App extends Component {
               ], 
               [{
                   id: 4,
-                  isForest: true,
-                  isMeadow: false,
-                  isField: false,
+                  tileType: 'forest',
                   hasPasture: false,
                   hasStable: false,
                   stableCount: 0,
@@ -64,9 +56,7 @@ class App extends Component {
                 },
                 {
                   id: 5,
-                  isForest: true,
-                  isMeadow: false,
-                  isField: false,
+                  tileType: 'forest',
                   hasPasture: false,
                   hasStable: false,
                   stableCount: 0,
@@ -77,9 +67,7 @@ class App extends Component {
                 },
                 {
                   id: 6,
-                  isForest: true,
-                  isMeadow: false,
-                  isField: false,
+                  tileType: 'forest',
                   hasPasture: false,
                   hasStable: false,
                   stableCount: 0,
@@ -92,9 +80,7 @@ class App extends Component {
               [
                 {
                   id: 7,
-                  isForest: true,
-                  isMeadow: false,
-                  isField: false,
+                  tileType: 'forest',
                   hasPasture: false,
                   hasStable: false,
                   stableCount: 0,
@@ -105,9 +91,7 @@ class App extends Component {
                 },
                  {
                   id: 8,
-                  isForest: true,
-                  isMeadow: false,
-                  isField: false,
+                  tileType: 'forest',
                   hasPasture: false,
                   hasStable: false,
                   stableCount: 0,
@@ -118,9 +102,7 @@ class App extends Component {
                 },
                 {
                   id: 9,
-                  isForest: true,
-                  isMeadow: false,
-                  isField: false,
+                  tileType: 'forest',
                   hasPasture: false,
                   hasStable: false,
                   stableCount: 0,
@@ -133,9 +115,7 @@ class App extends Component {
               [
                 {
                   id: 10,
-                  isForest: true,
-                  isMeadow: false,
-                  isField: false,
+                  tileType: 'forest',
                   hasPasture: false,
                   hasStable: false,
                   stableCount: 0,
@@ -146,9 +126,7 @@ class App extends Component {
                 },
                 {
                   id: 11,
-                  isForest: true,
-                  isMeadow: false,
-                  isField: false,
+                  tileType: 'forest',
                   hasPasture: false,
                   hasStable: false,
                   stableCount: 0,
@@ -159,9 +137,7 @@ class App extends Component {
                 },
                  {
                   id: 12,
-                  isForest: true,
-                  isMeadow: false,
-                  isField: false,
+                  tileType: 'forest',
                   hasPasture: false,
                   hasStable: false,
                   stableCount: 0,
