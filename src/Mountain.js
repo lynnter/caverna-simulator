@@ -1,12 +1,12 @@
 import React, { Component } from 'react'
 
-export class Space extends Component {
+export class Mountain extends Component {
 
   render() {
     let tileType = this.props.grid.tileType;
 
     return (
-      <div className="GridStyle">{this.props.grid.id} 
+      <div className="MountainStyle">{this.props.grid.id} 
           <br />
         
         <b>{tileType ? tileType : null}</b> 
@@ -28,4 +28,4 @@ export class Space extends Component {
   }
 }
 
-export default Space
+export default Mountain
