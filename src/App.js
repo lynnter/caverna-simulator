@@ -2,10 +2,20 @@ import React, { Component } from 'react';
 import './App.css';
 import Forest from './Forest';
 import Mountain from './Mountain';
+import PersonalSupply from './components/PersonalSupply';
 
 
 class App extends Component {
   state = {
+    personal : [{
+                  coinCount: 2,
+                  foodCount: 1, 
+                  woodCount: 0,
+                  stoneCount: 0,
+                  oreCount: 0,
+                  rubyCount: 0 
+    }
+    ],
     forest : [
               [
                 {
@@ -294,6 +304,8 @@ class App extends Component {
     return (
       <React.Fragment>
         <div className="App">
+        <h1>Caverna</h1>
+
           <div className="HomeBoard">
               <div>
                 {this.state.forest.map((fullGrid, idx) => (
@@ -320,6 +332,16 @@ class App extends Component {
                     </div>
                   ))} 
                 </div>
+
+              <div>
+                <h2>Personal Supply</h2>
+                {this.state.personal.map((pSupply, idx) => ( 
+                  <PersonalSupply 
+                  psupply={pSupply}
+                  key={idx}
+                  />
+                ))}
+              </div>
           </div>
         </div>
       </React.Fragment>
