@@ -13,7 +13,9 @@ class App extends Component {
                   woodCount: 0,
                   stoneCount: 0,
                   oreCount: 0,
-                  rubyCount: 0 
+                  rubyCount: 0,
+                  grainCount: 0,
+                  vegetableCount: 0
     }
     ],
     forest : [
@@ -307,6 +309,7 @@ class App extends Component {
         <h1>Caverna</h1>
 
           <div className="HomeBoard">
+            
               <div>
                 {this.state.forest.map((fullGrid, idx) => (
                     <div key={idx} className="FullGridStyle">
@@ -333,15 +336,18 @@ class App extends Component {
                   ))} 
                 </div>
 
-              <div>
-                <h2>Personal Supply</h2>
+            <div>
+              <div className="PersonalSupply">
+                <h3>Personal Supply</h3>
                 {this.state.personal.map((pSupply, idx) => ( 
-                  <PersonalSupply 
+                  <PersonalSupply
                   psupply={pSupply}
                   key={idx}
                   />
                 ))}
               </div>
+            </div>
+
           </div>
         </div>
       </React.Fragment>

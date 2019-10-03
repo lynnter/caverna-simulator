@@ -6,15 +6,15 @@ export class Coin extends React.Component {
       background: 'orange',
       width: '40px',
       height: '40px',
-      border: 'solid 2px red'
+      border: 'solid 2px red',
+      fontSize: '30px'
     }
   } 
 
   render() {
     return(
-      <div className='CoinResource'
-        style={this.divStyle()}
-      >{this.props.pcoin.coinCount}
+      <div style={this.divStyle()}>
+      {this.props.pcoin.coinCount}
       </div>
     )
   }
