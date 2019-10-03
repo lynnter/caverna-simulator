@@ -3,10 +3,12 @@ import './App.css';
 import Forest from './Forest';
 import Mountain from './Mountain';
 import PersonalSupply from './components/PersonalSupply';
+import MainGame from './MainGame';
 
 
 class App extends Component {
   state = {
+    maingame: [{ }],
     personal : [{
                   coinCount: 2,
                   foodCount: 1, 
@@ -267,7 +269,7 @@ class App extends Component {
                     [
                       {
                       id: 22,
-                      tileType: 'mountain',
+                      tileType: 'entry-level dwelling',
                       furnishingTileType: 'empty',
                       hasOreMine: false,
                       hasRubyMine: false,
@@ -308,8 +310,9 @@ class App extends Component {
         <div className="App">
         <h1>Caverna</h1>
 
+        <MainGame />
+
           <div className="HomeBoard">
-            
               <div>
                 {this.state.forest.map((fullGrid, idx) => (
                     <div key={idx} className="FullGridStyle">
