@@ -8,7 +8,123 @@ import MainGame from './MainGame';
 
 class App extends Component {
   state = {
-    maingame: [{ }],
+    // make a 3x9 array matrix for main board game
+    maingame: [
+                [
+                  {
+                    id: 1, 
+                    action: 'Drift Mining'
+                  },
+                  {
+                    id: 2,
+                    action: 'Excavation'
+                  },
+                  {
+                    id: 3, 
+                    action: 'Starting Player'
+                  },
+                  {
+                    id: 4, 
+                    action: 'Ruby Mining'
+                  },
+                  {
+                    id: 5, 
+                    action: 'random'
+                  },
+                  {
+                    id: 6, 
+                    action: 'random'
+                  },
+                  {
+                    id: 7, 
+                    action: 'random'
+                  },
+                  {
+                    id: 8, 
+                    action: 'random'
+                  },
+                  {
+                    id: 9, 
+                    action: 'random'
+                  },
+      ],
+      [
+                  {
+                    id: 10, 
+                    action: 'Logging'
+                  },
+                  {
+                    id: 11,
+                    action: 'Supplies'
+                  },
+                  {
+                    id: 12, 
+                    action: 'Ore Mining'
+                  },
+                  {
+                    id: 13, 
+                    action: 'Homework'
+                  },
+                  {
+                    id: 14, 
+                    action: 'random'
+                  },
+                  {
+                    id: 15, 
+                    action: 'random'
+                  },
+                  {
+                    id: 16, 
+                    action: 'random'
+                  },
+                  {
+                    id: 17, 
+                    action: 'random'
+                  },
+                  {
+                    id: 18, 
+                    action: 'random'
+                  },
+    ],
+    [
+                  {
+                    id: 19, 
+                    action: 'Wood Gathering'
+                  },
+                  {
+                    id: 20,
+                    action: 'Clearing'
+                  },
+                  {
+                    id: 21, 
+                    action: 'Sustenance'
+                  },
+                  {
+                    id: 22, 
+                    action: 'Slash-and-Burn'
+                  },
+                  {
+                    id: 23, 
+                    action: 'random'
+                  },
+                  {
+                    id: 24, 
+                    action: 'random'
+                  },
+                  {
+                    id: 25, 
+                    action: 'random'
+                  },
+                  {
+                    id: 26, 
+                    action: 'random'
+                  },
+                  {
+                    id: 27, 
+                    action: 'random'
+                  }
+  ],
+],
     personal : [{
                   coinCount: 2,
                   foodCount: 1, 
