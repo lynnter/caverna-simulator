@@ -13,118 +13,106 @@ class App extends Component {
                 [
                   {
                     id: 1, 
-                    action: 'Drift Mining'
+                    title: 'Drift Mining'
                   },
                   {
                     id: 2,
-                    action: 'Excavation'
+                    title: 'Excavation'
                   },
                   {
                     id: 3, 
-                    action: 'Starting Player'
+                    title: 'Starting Player'
                   },
                   {
                     id: 4, 
-                    action: 'Ruby Mining'
+                    title: 'Ruby Mining'
                   },
                   {
                     id: 5, 
-                    action: 'random'
+                    title: 'Round 1'
                   },
                   {
                     id: 6, 
-                    action: 'random'
+                    title: 'Round 4'
                   },
                   {
                     id: 7, 
-                    action: 'random'
+                    title: 'Round 7'
                   },
                   {
                     id: 8, 
-                    action: 'random'
+                    title: 'Round 10'
                   },
+                ],
+                [
                   {
                     id: 9, 
-                    action: 'random'
-                  },
-      ],
-      [
-                  {
-                    id: 10, 
-                    action: 'Logging'
+                    title: 'Logging'
                   },
                   {
-                    id: 11,
-                    action: 'Supplies'
+                    id: 10,
+                    title: 'Supplies'
+                  },
+                  {
+                    id: 11, 
+                    title: 'Ore Mining'
                   },
                   {
                     id: 12, 
-                    action: 'Ore Mining'
+                    title: 'Homework'
                   },
                   {
                     id: 13, 
-                    action: 'Homework'
+                    title: 'Round 2'
                   },
                   {
                     id: 14, 
-                    action: 'random'
+                    title: 'Round 5'
                   },
                   {
                     id: 15, 
-                    action: 'random'
+                    title: 'Round 8'
                   },
                   {
                     id: 16, 
-                    action: 'random'
-                  },
+                    title: 'Round 11'
+                  }
+                ],
+                [ 
                   {
                     id: 17, 
-                    action: 'random'
+                    title: 'Wood Gathering'
                   },
                   {
-                    id: 18, 
-                    action: 'random'
+                    id: 18,
+                    title: 'Clearing'
                   },
-    ],
-    [
                   {
                     id: 19, 
-                    action: 'Wood Gathering'
+                    title: 'Sustenance'
                   },
                   {
-                    id: 20,
-                    action: 'Clearing'
+                    id: 20, 
+                    title: 'Slash-and-Burn'
                   },
                   {
                     id: 21, 
-                    action: 'Sustenance'
+                    title: 'Round 3'
                   },
                   {
                     id: 22, 
-                    action: 'Slash-and-Burn'
+                    title: 'Round 6'
                   },
                   {
                     id: 23, 
-                    action: 'random'
+                    title: 'Round 9'
                   },
                   {
                     id: 24, 
-                    action: 'random'
+                    title: 'Round 12'
                   },
-                  {
-                    id: 25, 
-                    action: 'random'
-                  },
-                  {
-                    id: 26, 
-                    action: 'random'
-                  },
-                  {
-                    id: 27, 
-                    action: 'random'
-                  }
-  ],
-],
+                ],
+              ],
     personal : [{
                   coinCount: 2,
                   foodCount: 1, 
@@ -417,16 +405,28 @@ class App extends Component {
                       cowCount: 0,
                     },
                   ]
-    ]
-    }
+                ]
+  }
 
   render() {
+    console.log("MAIN", this.state.maingame)
     return (
       <React.Fragment>
         <div className="App">
         <h1>Caverna</h1>
 
-        <MainGame />
+        <div>
+          {this.state.maingame.map((fullGrid, idx) => (
+            <div key={idx} className="FullGridStyle">
+              {fullGrid.map(mgrid => (
+                <MainGame
+                  mgrid={mgrid}
+                  key={mgrid.id}
+                  />
+              ))}
+            </div>
+          ))}
+        </div>
 
           <div className="HomeBoard">
               <div>
