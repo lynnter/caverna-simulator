@@ -14,13 +14,13 @@ export class Dwarf extends React.Component {
       height: '40px',
       border: 'solid 2px black',
       fontSize: '15px',
+      margin: '5px'
     }
   } 
 
   render() {
     return(
       <div style={this.divStyle()}>
-      LVL: {this.state.level}
       </div>
     )
   }

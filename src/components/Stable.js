@@ -8,7 +8,8 @@ export class Stable extends React.Component {
       width: '40px',
       height: '40px',
       border: 'solid 1px black',
-      fontSize: '12px'
+      fontSize: '12px',
+      margin: '5px'
     }
   } 
 

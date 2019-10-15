@@ -2,12 +2,12 @@ import React, { Component } from 'react';
 import './App.css';
 import Forest from './Forest';
 import Mountain from './Mountain';
+import Dwarf from './components/Dwarf';
 import PersonalSupply from './components/PersonalSupply';
 import MainGame from './MainGame';
 
 class App extends Component {
   state = {
-    // make a 3x9 array matrix for main board game
     maingame: [
                 [
                   {
@@ -142,8 +142,8 @@ class App extends Component {
                   },
                 ],
               ],
+    dwarf : [{number: 1, level: 0}, {number: 2, level: 0}],
     personal : [{
-                  dwarfCount: 3,
                   stableCount: 3,
                   coinCount: 2,
                   foodCount: 1, 
@@ -153,8 +153,7 @@ class App extends Component {
                   rubyCount: 0,
                   grainCount: 0,
                   vegetableCount: 0
-    }
-    ],
+    }],
     forest : [
               [
                 {
@@ -440,9 +439,13 @@ class App extends Component {
   }
 
   render() {
+    console.log(this.state.dwarf)
     return (
         <div className="App">
         <h1>Caverna</h1>
+
+
+          
 
         <div className="GameBoard">
           {this.state.maingame.map((fullGrid, idx) => (
@@ -487,6 +490,14 @@ class App extends Component {
             <div>
               <div className="PersonalSupply">
                 <h3>Personal Supply</h3>
+                  <div className="Dwarves">
+                    {this.state.dwarf.map((idx) => (
+                      <div key={idx}>
+                          <Dwarf />
+                      </div>
+                    ))}
+                  </div>
+
                 {this.state.personal.map((pSupply, idx) => ( 
                   <PersonalSupply
                   psupply={pSupply}

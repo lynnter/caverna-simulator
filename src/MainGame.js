@@ -1,8 +1,6 @@
 import React, { Component } from 'react'
 import './App.css'
 export class MainGame extends Component {
-
-
 renderGoods = () => {
   if(this.props.mgrid.hasGoods && this.props.mgrid.stoneCount){
     return <div style={this.stoneStyle}>{this.props.mgrid.stoneCount}</div>
@@ -59,7 +57,6 @@ oreStyle = {
   margin: '5px'
 } 
 
-
 woodStyle = {
   color: 'black',
   width: '30px',
@@ -70,12 +67,9 @@ woodStyle = {
   margin: '5px'
 } 
 
-
   render() {
-
-    console.log("here", this.props.mgrid.hasGoods)
+    
       return (
-       
         <div className="FullGridStyle">
             <div className="MainGameStyle">
                 {this.props.mgrid.title}

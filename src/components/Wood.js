@@ -7,7 +7,8 @@ export class Wood extends React.Component {
       width: '30px',
       height: '30px',
       border: 'solid 1px black',
-      fontSize: '12px'
+      fontSize: '12px',
+      margin: '5px'
     }
   } 
 

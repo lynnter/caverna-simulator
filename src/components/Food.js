@@ -8,7 +8,8 @@ export class Food extends React.Component {
       width: '30px',
       height: '30px',
       border: 'solid 2px grey',
-      fontSize: '12px'
+      fontSize: '12px',
+      margin: '5px'
     }
   } 
 
