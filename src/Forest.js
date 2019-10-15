@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-
 export class Forest extends Component {
 
   render() {
@@ -28,4 +27,5 @@ export class Forest extends Component {
   }
 }
 
-export default Forest
+
+export default Forest;

@@ -1,12 +1,12 @@
 import React from 'react'
 
-export class Ruby extends React.Component {
+export class Stable extends React.Component {
   divStyle = () => {
       return {
-      background: 'red',
-      color: 'white',
-      width: '30px',
-      height: '30px',
+      background: 'purple',
+      color: 'black',
+      width: '40px',
+      height: '40px',
       border: 'solid 1px black',
       fontSize: '12px'
     }
@@ -15,10 +15,10 @@ export class Ruby extends React.Component {
   render() {
     return(
       <div style={this.divStyle()}>
-      Ruby {this.props.pruby.rubyCount}
+      Stable {this.props.pstable.stableCount}
       </div>
     )
   }
 }
 
-export default Ruby
+export default Stable

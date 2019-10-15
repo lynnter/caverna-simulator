@@ -5,17 +5,17 @@ export class Vegetable extends React.Component {
       return {
       background: 'orange',
       color: 'black',
-      width: '40px',
-      height: '40px',
-      border: 'solid 2px black',
-      fontSize: '30px'
+      width: '30px',
+      height: '30px',
+      border: 'solid 1px black',
+      fontSize: '12px'
     }
   } 
 
   render() {
     return(
       <div style={this.divStyle()}>
-      {this.props.pvegetable.vegetableCount}
+      Vegg {this.props.pvegetable.vegetableCount}
       </div>
     )
   }

@@ -5,17 +5,17 @@ export class Food extends React.Component {
       return {
       background: 'yellow',
       color: 'black',
-      width: '40px',
-      height: '40px',
+      width: '30px',
+      height: '30px',
       border: 'solid 2px grey',
-      fontSize: '30px'
+      fontSize: '12px'
     }
   } 
 
   render() {
     return(
       <div style={this.divStyle()}>
-      {this.props.pfood.foodCount}
+      Food {this.props.pfood.foodCount}
       </div>
     )
   }

@@ -5,7 +5,6 @@ import Mountain from './Mountain';
 import PersonalSupply from './components/PersonalSupply';
 import MainGame from './MainGame';
 
-
 class App extends Component {
   state = {
     // make a 3x9 array matrix for main board game
@@ -13,19 +12,31 @@ class App extends Component {
                 [
                   {
                     id: 1, 
-                    title: 'Drift Mining'
+                    title: 'Drift Mining',
+                    hasGoods: true,
+                    type: 'Stone',
+                    stoneCount: 1
                   },
                   {
                     id: 2,
-                    title: 'Excavation'
+                    title: 'Excavation',
+                    hasGoods: true,
+                    type: 'Stone',
+                    stoneCount: 1
                   },
                   {
                     id: 3, 
-                    title: 'Starting Player'
+                    title: 'Starting Player',
+                    hasGoods: true,
+                    type: 'Food',
+                    foodcount: 1
                   },
                   {
                     id: 4, 
-                    title: 'Ruby Mining'
+                    title: 'Ruby Mining',
+                    hasGoods: true,
+                    type: 'Ruby',
+                    rubyCount: 0
                   },
                   {
                     id: 5, 
@@ -47,19 +58,27 @@ class App extends Component {
                 [
                   {
                     id: 9, 
-                    title: 'Logging'
+                    title: 'Logging',
+                    hasGoods: true,
+                    type: 'Wood',
+                    woodCount: 3
                   },
                   {
                     id: 10,
-                    title: 'Supplies'
+                    title: 'Supplies',
+                    hasGoods: false,
                   },
                   {
                     id: 11, 
-                    title: 'Ore Mining'
+                    title: 'Ore Mining',
+                    hasGoods: true,
+                    type: 'Ore',
+                    oreCount: 2
                   },
                   {
                     id: 12, 
-                    title: 'Homework'
+                    title: 'Homework',
+                    hasGoods: false
                   },
                   {
                     id: 13, 
@@ -81,19 +100,29 @@ class App extends Component {
                 [ 
                   {
                     id: 17, 
-                    title: 'Wood Gathering'
+                    title: 'Wood Gathering',
+                    hasGoods: true,
+                    type: 'Wood',
+                    woodCount: 1
                   },
                   {
                     id: 18,
-                    title: 'Clearing'
+                    title: 'Clearing',
+                    hasGoods: true,
+                    type: 'Wood',
+                    woodCount: 1
                   },
                   {
                     id: 19, 
-                    title: 'Sustenance'
+                    title: 'Sustenance',
+                    hasGoods: true,
+                    type: 'Food',
+                    foodCount: 1
                   },
                   {
                     id: 20, 
-                    title: 'Slash-and-Burn'
+                    title: 'Slash-and-Burn',
+                    hasGoods: false
                   },
                   {
                     id: 21, 
@@ -114,6 +143,8 @@ class App extends Component {
                 ],
               ],
     personal : [{
+                  dwarfCount: 3,
+                  stableCount: 3,
                   coinCount: 2,
                   foodCount: 1, 
                   woodCount: 0,
@@ -409,9 +440,7 @@ class App extends Component {
   }
 
   render() {
-    console.log("MAIN", this.state.maingame)
     return (
-      <React.Fragment>
         <div className="App">
         <h1>Caverna</h1>
 
@@ -469,7 +498,6 @@ class App extends Component {
 
           </div>
         </div>
-      </React.Fragment>
     )
   }
 

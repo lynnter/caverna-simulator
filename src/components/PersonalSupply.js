@@ -1,4 +1,6 @@
 import React from 'react'
+import Dwarf from './Dwarf'
+import Stable from './Stable'
 import Wood from './Wood'
 import Stone from './Stone'
 import Ore from './Ore'
@@ -12,6 +14,10 @@ import '../App.css'
 function PersonalSupply(props) {
      return (
           <div className="FlexPersonalSupply">
+               <Dwarf pdwarf={props.psupply}/>
+               <Dwarf pdwarf={props.psupply}/>
+               <Dwarf pdwarf={props.psupply}/>
+               <Stable pstable={props.psupply}/>
                <Wood pwood={props.psupply}/>
                <Stone pstone={props.psupply}/>
                <Ore pore={props.psupply}/>
