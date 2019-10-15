@@ -444,7 +444,7 @@ class App extends Component {
         <div className="App">
         <h1>Caverna</h1>
 
-        <div>
+        <div className="GameBoard">
           {this.state.maingame.map((fullGrid, idx) => (
             <div key={idx} className="FullGridStyle">
               {fullGrid.map(mgrid => (

@@ -25,7 +25,8 @@ stoneStyle = {
   height: '30px',
   fontSize: '12px',
   border:  'solid 1px black',
-  background: 'grey'
+  background: 'grey',
+  margin: '5px'
 } 
   
 foodStyle = {
@@ -34,7 +35,8 @@ foodStyle = {
   height: '30px',
   fontSize: '12px',
   border: 'solid 1px grey',
-  background: 'yellow'
+  background: 'yellow',
+  margin: '5px'
 } 
 
 rubyStyle = {
@@ -43,7 +45,8 @@ rubyStyle = {
   height: '30px',
   fontSize: '12px',
   border: 'solid 1px black',
-  background: 'red'
+  background: 'red',
+  margin: '5px'
 } 
 
 oreStyle = {
@@ -52,7 +55,8 @@ oreStyle = {
   height: '30px',
   fontSize: '12px',
   border: 'solid 1px black',
-  background: 'black'
+  background: 'black',
+  margin: '5px'
 } 
 
 
@@ -62,7 +66,8 @@ woodStyle = {
   height: '30px',
   fontSize: '12px',
   border: 'solid 1px black',
-  background: '#4b2d21'
+  background: '#4b2d21',
+  margin: '5px'
 } 
 
 

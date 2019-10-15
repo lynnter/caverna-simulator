@@ -3,23 +3,30 @@
   display: flex;
   min-height: 100vh;
   flex-direction: column;
-  margin: 0;
+  margin: auto;
 }
 
 .MainGameStyle {
-  border: 5px solid blue;
+  border: 2px solid blue;
   width: 150px;
   height: 150px;
+}
+
+.GameBoard {
+  border: 2px solid black; 
+  padding: 5px;
+  margin: auto;
+  margin-bottom: 10px;
 }
 
 .HomeBoard {
 display: flex;
 flex: 1;
 flex-wrap: wrap;
-border: 5px solid black;
-padding: 10px;
-width: 90%;
+border: 2px solid black;
 justify-content: center;
+margin: auto;
+padding: 5px;
 }
 
 .ForestStyle {
@@ -27,7 +34,7 @@ justify-content: center;
   flex: 1 0 auto;
   width: 100px;
   height: 120px;
-  border: 5px solid green;
+  border: 2px solid green;
   padding: 10px;
 }
 
@@ -36,12 +43,14 @@ justify-content: center;
   flex: 1 0 auto;
   width: 100px;
   height: 120px;
-  border: 5px solid gray;
+  border: 2px solid gray;
   padding: 10px;
 }
 
 .FullGridStyle {
   display: flex;
+  margin: auto;
+  padding: 2px;
 }
 
 .PersonalSupply{
