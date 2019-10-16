@@ -67,18 +67,17 @@ woodStyle = {
   margin: '5px'
 } 
 
-  render() {
 
+  render() {
       return (
         <div className="FullGridStyle">
-            <div className="MainGameStyle">
+            <div className="MainGameStyle" onClick={this.props.onClick}>
                 {this.props.mgrid.title}
                 <br />
                 {this.renderGoods()} 
             </div>
         </div>
       )
-      
   }
 }
 

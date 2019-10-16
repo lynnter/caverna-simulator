@@ -453,27 +453,27 @@ class App extends Component {
                 ]
   }
 
- handleClick = (e) => {
-   e.preventDefault()
-   this.state.maingame.map(d => {
-     d.map((f) => {
-      console.log("here", f.id)
-      return f
-     })
-     return d
-   })
+  handleClick = mgrid => 
+    e => { 
+    e.preventDefault()
+    console.log(mgrid)
  }
 
+
   render() {
+    console.log("what is this", this.props.mgrid)
     return (
         <div className="App">
         <h1>Caverna</h1>
 
         <div className="GameBoard">
           {this.state.maingame.map((fullGrid, idx) => (
-            <div key={idx} className="FullGridStyle" onClick={this.handleClick}>
+            <div key={idx} 
+              className="FullGridStyle" 
+            >
               {fullGrid.map(mgrid => (
                 <MainGame
+                  onClick={this.handleClick(mgrid.id)}
                   mgrid={mgrid}
                   key={mgrid.id}
                   />
