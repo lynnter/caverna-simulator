@@ -13,7 +13,6 @@ import '../App.css'
 function PersonalSupply(props) {
      return (
           <div className="FlexPersonalSupply">
-               <br/>
                <Stable pstable={props.psupply}/>
                <Wood pwood={props.psupply}/>
                <br/>

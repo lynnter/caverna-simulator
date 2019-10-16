@@ -67,7 +67,6 @@ woodStyle = {
   margin: '5px'
 } 
 
-
   render() {
       return (
         <div className="FullGridStyle">

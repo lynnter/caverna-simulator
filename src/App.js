@@ -453,15 +453,31 @@ class App extends Component {
                 ]
   }
 
+
   handleClick = mgrid => 
     e => { 
-    e.preventDefault()
-    console.log(mgrid)
- }
+      e.preventDefault(mgrid);
+        this.setState(prevState => ({
+          maingame: prevState.maingame.map(
+        row => row.map(el => 
+          el.id === mgrid ? { ...el, taken: 'true' } : el
+          )
+        )}))
+    }
+
+  // handleClick = mgrid => 
+  //   e => { 
+  //     e.preventDefault(mgrid);
+  //       this.setState(prevState => ({
+  //         maingame: prevState.maingame.map(
+  //           el => el.id === mgrid.id ? { ...el, taken: 'true' }: el
+  //         )
+  //       }))
+  //   }
 
 
   render() {
-    console.log("what is this", this.props.mgrid)
+    console.log("true yet?", this.state.maingame)
     return (
         <div className="App">
         <h1>Caverna</h1>
@@ -473,7 +489,7 @@ class App extends Component {
             >
               {fullGrid.map(mgrid => (
                 <MainGame
-                  onClick={this.handleClick(mgrid.id)}
+                  onClick={this.handleClick(mgrid)}
                   mgrid={mgrid}
                   key={mgrid.id}
                   />
