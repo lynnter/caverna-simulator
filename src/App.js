@@ -460,24 +460,14 @@ class App extends Component {
         this.setState(prevState => ({
           maingame: prevState.maingame.map(
         row => row.map(el => 
-          el.id === mgrid ? { ...el, taken: 'true' } : el
+          el.id === mgrid.id ? { ...el, taken: true } : el
           )
         )}))
     }
 
-  // handleClick = mgrid => 
-  //   e => { 
-  //     e.preventDefault(mgrid);
-  //       this.setState(prevState => ({
-  //         maingame: prevState.maingame.map(
-  //           el => el.id === mgrid.id ? { ...el, taken: 'true' }: el
-  //         )
-  //       }))
-  //   }
-
 
   render() {
-    console.log("true yet?", this.state.maingame)
+    console.log(this.state.maingame)
     return (
         <div className="App">
         <h1>Caverna</h1>
