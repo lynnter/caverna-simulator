@@ -15,28 +15,32 @@ class App extends Component {
                     title: 'Drift Mining',
                     hasGoods: true,
                     type: 'Stone',
-                    stoneCount: 1
+                    stoneCount: 1,
+                    taken: false
                   },
                   {
                     id: 2,
                     title: 'Excavation',
                     hasGoods: true,
                     type: 'Stone',
-                    stoneCount: 1
+                    stoneCount: 1,
+                    taken: false
                   },
                   {
                     id: 3, 
                     title: 'Starting Player',
                     hasGoods: true,
                     type: 'Food',
-                    foodcount: 1
+                    foodcount: 1,
+                    taken: false
                   },
                   {
                     id: 4, 
                     title: 'Ruby Mining',
                     hasGoods: true,
                     type: 'Ruby',
-                    rubyCount: 0
+                    rubyCount: 0,
+                    taken: false
                   },
                   {
                     id: 5, 
@@ -61,24 +65,28 @@ class App extends Component {
                     title: 'Logging',
                     hasGoods: true,
                     type: 'Wood',
-                    woodCount: 3
+                    woodCount: 3,
+                    taken: false
                   },
                   {
                     id: 10,
                     title: 'Supplies',
                     hasGoods: false,
+                    taken: false
                   },
                   {
                     id: 11, 
                     title: 'Ore Mining',
                     hasGoods: true,
                     type: 'Ore',
-                    oreCount: 2
+                    oreCount: 2,
+                    taken: false
                   },
                   {
                     id: 12, 
                     title: 'Homework',
-                    hasGoods: false
+                    hasGoods: false,
+                    taken: false
                   },
                   {
                     id: 13, 
@@ -103,26 +111,30 @@ class App extends Component {
                     title: 'Wood Gathering',
                     hasGoods: true,
                     type: 'Wood',
-                    woodCount: 1
+                    woodCount: 1,
+                    taken: false
                   },
                   {
                     id: 18,
                     title: 'Clearing',
                     hasGoods: true,
                     type: 'Wood',
-                    woodCount: 1
+                    woodCount: 1,
+                    taken: false
                   },
                   {
                     id: 19, 
                     title: 'Sustenance',
                     hasGoods: true,
                     type: 'Food',
-                    foodCount: 1
+                    foodCount: 1,
+                    taken: false
                   },
                   {
                     id: 20, 
                     title: 'Slash-and-Burn',
-                    hasGoods: false
+                    hasGoods: false,
+                    taken: false
                   },
                   {
                     id: 21, 
@@ -142,7 +154,10 @@ class App extends Component {
                   },
                 ],
               ],
-    dwarf : [{number: 1, level: 0}, {number: 2, level: 0}],
+    dwarf : [
+             {number: 1, level: 0, used: false}, 
+             {number: 2, level: 0, used: false}
+            ],
     personal : [{
                   stableCount: 3,
                   coinCount: 2,
@@ -438,18 +453,25 @@ class App extends Component {
                 ]
   }
 
+ handleClick = (e) => {
+   e.preventDefault()
+   this.state.maingame.map(d => {
+     d.map((f) => {
+      console.log("here", f.id)
+      return f
+     })
+     return d
+   })
+ }
+
   render() {
-    console.log(this.state.dwarf)
     return (
         <div className="App">
         <h1>Caverna</h1>
 
-
-          
-
         <div className="GameBoard">
           {this.state.maingame.map((fullGrid, idx) => (
-            <div key={idx} className="FullGridStyle">
+            <div key={idx} className="FullGridStyle" onClick={this.handleClick}>
               {fullGrid.map(mgrid => (
                 <MainGame
                   mgrid={mgrid}

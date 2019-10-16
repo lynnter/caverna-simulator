@@ -68,7 +68,7 @@ woodStyle = {
 } 
 
   render() {
-    
+
       return (
         <div className="FullGridStyle">
             <div className="MainGameStyle">
