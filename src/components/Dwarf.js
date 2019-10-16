@@ -1,10 +1,6 @@
 import React from 'react'
 
 export class Dwarf extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {level: 0};
-  }
 
   divStyle = () => {
       return {

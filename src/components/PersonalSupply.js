@@ -15,7 +15,6 @@ function PersonalSupply(props) {
           <div className="FlexPersonalSupply">
                <Stable pstable={props.psupply}/>
                <Wood pwood={props.psupply}/>
-               <br/>
                <Stone pstone={props.psupply}/>
                <Ore pore={props.psupply}/>
                <Ruby pruby={props.psupply}/>

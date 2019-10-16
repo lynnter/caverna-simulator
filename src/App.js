@@ -8,6 +8,7 @@ import MainGame from './MainGame';
 
 class App extends Component {
   state = {
+    turnCount : 0,
     maingame: [
                 [
                   {
@@ -157,6 +158,7 @@ class App extends Component {
     dwarf : [
              {number: 1, level: 0, used: false}, 
              {number: 2, level: 0, used: false}
+
             ],
     personal : [{
                   stableCount: 3,
@@ -453,8 +455,7 @@ class App extends Component {
                 ]
   }
 
-
-  handleClick = mgrid => 
+  handleActionClick = mgrid => 
     e => { 
       e.preventDefault(mgrid);
         this.setState(prevState => ({
@@ -463,11 +464,17 @@ class App extends Component {
           el.id === mgrid.id ? { ...el, taken: true } : el
           )
         )}))
+
+        this.setState(state =>{
+          return {turnCount : state.turnCount + 1}
+        })
     }
 
 
+
+
   render() {
-    console.log(this.state.maingame)
+    console.log(this.state)
     return (
         <div className="App">
         <h1>Caverna</h1>
@@ -479,7 +486,7 @@ class App extends Component {
             >
               {fullGrid.map(mgrid => (
                 <MainGame
-                  onClick={this.handleClick(mgrid)}
+                  onClick={this.handleActionClick(mgrid)}
                   mgrid={mgrid}
                   key={mgrid.id}
                   />
@@ -518,10 +525,13 @@ class App extends Component {
             <div>
               <div className="PersonalSupply">
                 <h3>Personal Supply</h3>
+
+                
                   <div className="Dwarves">
                     {this.state.dwarf.map((idx) => (
                       <div key={idx}>
-                          <Dwarf />
+                          <Dwarf 
+                          />
                       </div>
                     ))}
                   </div>
