@@ -9,6 +9,7 @@ import MainGame from './MainGame';
 class App extends Component {
   state = {
     turnCount : 0,
+    selectedDwarf : null,
     maingame: [
                 [
                   {
@@ -468,13 +469,13 @@ class App extends Component {
 
     handleClickDwarves = dwarf => {
       this.setState({ dwarves: this.state.dwarves.map(
-        e => e.id === dwarf ? { ...e, selectedDwarf : e, used: true} : e
-      )
-      })
-      }
+        e => e.id === dwarf ? { ...e} : e
+      )})
+      this.setState({ selectedDwarf : dwarf})
+    }
 
   render() {
-    console.log("me dwarves", this.state.dwarves)
+    console.log("clicked dwarves", this.state)
     return (
         <div className="App">
         <h1>Caverna</h1>
