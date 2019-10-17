@@ -17,55 +17,13 @@ renderGoods = () => {
   }
 }
 
-stoneStyle = {
-  color: 'black',
-  width: '30px',
-  height: '30px',
-  fontSize: '12px',
-  border:  'solid 1px black',
-  background: 'grey',
-  margin: '5px'
-} 
-  
-foodStyle = {
-  color: 'black',
-  width: '30px',
-  height: '30px',
-  fontSize: '12px',
-  border: 'solid 1px grey',
-  background: 'yellow',
-  margin: '5px'
-} 
-
-rubyStyle = {
-  color: 'black',
-  width: '30px',
-  height: '30px',
-  fontSize: '12px',
-  border: 'solid 1px black',
-  background: 'red',
-  margin: '5px'
-} 
-
-oreStyle = {
-  color: 'white',
-  width: '30px',
-  height: '30px',
-  fontSize: '12px',
-  border: 'solid 1px black',
-  background: 'black',
-  margin: '5px'
-} 
-
-woodStyle = {
-  color: 'black',
-  width: '30px',
-  height: '30px',
-  fontSize: '12px',
-  border: 'solid 1px black',
-  background: '#4b2d21',
-  margin: '5px'
-} 
+renderDwarves = () => {
+  if(this.props.mgrid.taken === true) {
+    return <div style={this.divStyle}></div> 
+  } else {
+    return null
+  }
+}
 
   render() {
       return (
@@ -74,10 +32,77 @@ woodStyle = {
                 {this.props.mgrid.title}
                 <br />
                 {this.renderGoods()} 
+                <br />
+                {this.renderDwarves()}
             </div>
         </div>
       )
   }
+
+// Styling
+  stoneStyle = {
+    color: 'black',
+    width: '30px',
+    height: '30px',
+    fontSize: '12px',
+    border:  'solid 1px black',
+    background: 'grey',
+    margin: '5px'
+  } 
+    
+  foodStyle = {
+    color: 'black',
+    width: '30px',
+    height: '30px',
+    fontSize: '12px',
+    border: 'solid 1px grey',
+    background: 'yellow',
+    margin: '5px'
+  } 
+  
+  rubyStyle = {
+    color: 'black',
+    width: '30px',
+    height: '30px',
+    fontSize: '12px',
+    border: 'solid 1px black',
+    background: 'red',
+    margin: '5px'
+  } 
+  
+  oreStyle = {
+    color: 'white',
+    width: '30px',
+    height: '30px',
+    fontSize: '12px',
+    border: 'solid 1px black',
+    background: 'black',
+    margin: '5px'
+  } 
+  
+  woodStyle = {
+    color: 'black',
+    width: '30px',
+    height: '30px',
+    fontSize: '12px',
+    border: 'solid 1px black',
+    background: '#4b2d21',
+    margin: '5px'
+  } 
+
+  divStyle = {
+    background: 'purple',
+    color: 'black',
+    width: '40px',
+    height: '40px',
+    border: 'solid 2px black',
+    fontSize: '15px',
+    margin: '5px'
+  } 
+  
 }
+
+
+
 
 export default MainGame

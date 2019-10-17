@@ -455,18 +455,26 @@ class App extends Component {
                 ]
   }
 
+
+  // Action Spaces
   handleActionClick = mgrid => 
     e => { 
-    e.preventDefault(mgrid);
-      this.setState(prevState => ({
-        maingame: prevState.maingame.map(
-      row => row.map(el => 
-        el.id === mgrid.id ? { ...el, taken: true } : el
-        )),
-        turnCount : prevState.turnCount + 1
-      }))
+      e.preventDefault(mgrid);
+        this.setState(prevState => ({
+          maingame: prevState.maingame.map(
+            row => row.map(el => 
+              el.id === mgrid.id ? { ...el, taken: true, } : el,
+          )),
+          turnCount : prevState.turnCount + 1, 
+        }))
+        this.setState({ dwarves: this.state.dwarves.map(
+          dwarf => dwarf.id === mgrid.id ? { ...dwarf, used: true} : dwarf
+        )
+      })
   }
 
+
+  // Selecting Dwarves
     handleClickDwarves = dwarf => {
       this.setState({ dwarves: this.state.dwarves.map(
         e => e.id === dwarf ? { ...e} : e
@@ -475,85 +483,85 @@ class App extends Component {
     }
 
   render() {
-    console.log("clicked dwarves", this.state)
+    console.log(this.state)
     return (
-        <div className="App">
-        <h1>Caverna</h1>
+      <div className="App">
+      <h1>Caverna</h1>
 
-        <div className="GameBoard">
-          {this.state.maingame.map((fullGrid, idx) => (
-            <div key={idx} 
-              className="FullGridStyle" 
-            >
-              {fullGrid.map(mgrid => (
-                <MainGame
-                  onClick={this.handleActionClick(mgrid)}
-                  mgrid={mgrid}
-                  key={mgrid.id}
-                  />
+      <div className="GameBoard">
+        {this.state.maingame.map((fullGrid, idx) => (
+          <div key={idx} 
+            className="FullGridStyle" 
+          >
+            {fullGrid.map(mgrid => (
+              <MainGame
+                onClick={this.handleActionClick(mgrid)}
+                mgrid={mgrid}
+                key={mgrid.id}
+                />
+            ))}
+          </div>
+        ))}
+      </div>
+
+        <div className="HomeBoard">
+            <div>
+              {this.state.forest.map((fullGrid, idx) => (
+                  <div key={idx} className="FullGridStyle">
+                      {fullGrid.map(grid => (
+                        <Forest
+                          grid={grid} 
+                          key={grid.id}
+                          />
+                      ))}
+                  </div>
+              ))} 
+              </div>
+              
+              <div>
+                {this.state.mountain.map((fullGrid, idx) => (
+                  <div key={idx} className="FullGridStyle">
+                      {fullGrid.map(grid => (
+                        <Mountain
+                          grid={grid} 
+                          key={grid.id}
+                          />
+                      ))}
+                  </div>
+                ))} 
+              </div>
+
+          <div>
+            <div className="PersonalSupply">
+              <h3>Personal Supply</h3>
+
+              
+              <div className="Dwarves">
+                  {this.state.dwarves.map((dwarf, idx) => (
+                    <div key={idx}>
+                        <Dwarf 
+                          handleClickDwarves={this.handleClickDwarves}
+                          {...dwarf}
+                          />
+                    </div>
+                  ))}
+                </div>
+
+              {this.state.personal.map((pSupply, idx) => ( 
+                <PersonalSupply
+                psupply={pSupply}
+                key={idx}
+                />
               ))}
             </div>
-          ))}
-        </div>
-
-          <div className="HomeBoard">
-              <div>
-                {this.state.forest.map((fullGrid, idx) => (
-                    <div key={idx} className="FullGridStyle">
-                        {fullGrid.map(grid => (
-                          <Forest
-                            grid={grid} 
-                            key={grid.id}
-                            />
-                        ))}
-                    </div>
-                ))} 
-                </div>
-                
-                <div>
-                  {this.state.mountain.map((fullGrid, idx) => (
-                    <div key={idx} className="FullGridStyle">
-                        {fullGrid.map(grid => (
-                          <Mountain
-                            grid={grid} 
-                            key={grid.id}
-                            />
-                        ))}
-                    </div>
-                  ))} 
-                </div>
-
-            <div>
-              <div className="PersonalSupply">
-                <h3>Personal Supply</h3>
-
-                
-                <div className="Dwarves">
-                    {this.state.dwarves.map((dwarf, idx) => (
-                      <div key={idx}>
-                          <Dwarf 
-                            handleClickDwarves={this.handleClickDwarves}
-                            {...dwarf}
-                            />
-                      </div>
-                    ))}
-                  </div>
-
-                {this.state.personal.map((pSupply, idx) => ( 
-                  <PersonalSupply
-                  psupply={pSupply}
-                  key={idx}
-                  />
-                ))}
-              </div>
-            </div>
-
           </div>
-        </div>
-    )
-  }
 
+        </div>
+      </div>
+  )
 }
+}
+
 
 export default App;
 
