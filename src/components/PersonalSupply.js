@@ -13,7 +13,7 @@ import '../App.css'
 function PersonalSupply(props) {
      return (
           <div className="FlexPersonalSupply">
-               <Stable pstable={props.psupply}/>
+               <Stable stableCount={props.psupply.stableCount}/>
                <Wood pwood={props.psupply}/>
                <Stone pstone={props.psupply}/>
                <Ore pore={props.psupply}/>

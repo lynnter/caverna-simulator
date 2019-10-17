@@ -18,17 +18,21 @@ renderGoods = () => {
 }
 
 renderDwarves = () => {
-  if(this.props.mgrid.taken === true) {
+  if(this.props.mgrid.dwarf !== undefined) {
     return <div style={this.divStyle}></div> 
   } else {
     return null
   }
 }
 
+onCardClick = () => {
+  this.props.onClick(this.props.mgrid);
+}
+
   render() {
       return (
         <div className="FullGridStyle">
-            <div className="MainGameStyle" onClick={this.props.onClick}>
+            <div className="MainGameStyle" onClick={this.onCardClick}>
                 {this.props.mgrid.title}
                 <br />
                 {this.renderGoods()} 

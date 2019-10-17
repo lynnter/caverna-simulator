@@ -16,7 +16,7 @@ export class Stable extends React.Component {
   render() {
     return(
       <div style={this.divStyle()}>
-      Stable {this.props.pstable.stableCount}
+      Stable {this.props.stableCount}
       </div>
     )
   }

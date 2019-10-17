@@ -457,33 +457,38 @@ class App extends Component {
 
 
   // Action Spaces
-  handleActionClick = mgrid => 
-    e => { 
-      e.preventDefault(mgrid);
-        this.setState(prevState => ({
-          maingame: prevState.maingame.map(
-            row => row.map(el => 
-              el.id === mgrid.id ? { ...el, taken: true, } : el,
-          )),
-          turnCount : prevState.turnCount + 1, 
-        }))
-        this.setState({ dwarves: this.state.dwarves.map(
-          dwarf => dwarf.id === mgrid.id ? { ...dwarf, used: true} : dwarf
-        )
-      })
+  handleActionClick = mgrid => {
+    // return e => { 
+    //   e.preventDefault(mgrid);
+    const dwarves = this.state.dwarves.map(dwarf =>
+      dwarf.id === this.state.selectedDwarfId
+        ? { ...dwarf, used: true}
+        : dwarf
+    )
+    const selectedDwarf = dwarves.find(dwarf => dwarf.id === this.state.selectedDwarfId);
+    this.setState(prevState => ({
+      maingame: prevState.maingame.map(
+        row => row.map(el => 
+          el.id === mgrid.id ? { ...el, taken: true, dwarf: selectedDwarf } : el,
+      )),
+      turnCount: prevState.turnCount + 1,
+      dwarves: dwarves,
+      selectedDwarfId: null,
+    }))
   }
 
 
+
   // Selecting Dwarves
-    handleClickDwarves = dwarf => {
-      this.setState({ dwarves: this.state.dwarves.map(
-        e => e.id === dwarf ? { ...e} : e
-      )})
-      this.setState({ selectedDwarf : dwarf})
+    handleClickDwarves = dwarfId => {
+      // this.setState({ dwarves: this.state.dwarves.map(
+      //   e => e.id === dwarf ? { ...e}  : e
+      // )})
+      this.setState({ selectedDwarfId : dwarfId})
     }
 
   render() {
-    console.log(this.state)
+    console.log(this.state.selectedDwarf)
     return (
       <div className="App">
       <h1>Caverna</h1>
@@ -495,7 +500,7 @@ class App extends Component {
           >
             {fullGrid.map(mgrid => (
               <MainGame
-                onClick={this.handleActionClick(mgrid)}
+                onClick={this.handleActionClick}
                 mgrid={mgrid}
                 key={mgrid.id}
                 />
@@ -538,12 +543,14 @@ class App extends Component {
               
               <div className="Dwarves">
                   {this.state.dwarves.map((dwarf, idx) => (
-                    <div key={idx}>
-                        <Dwarf 
-                          handleClickDwarves={this.handleClickDwarves}
-                          {...dwarf}
-                          />
-                    </div>
+                    !dwarf.used
+                      ? <div key={idx}>
+                          <Dwarf 
+                            handleClickDwarves={this.handleClickDwarves}
+                            {...dwarf}
+                            />
+                      </div>
+                      : null
                   ))}
                 </div>
 
