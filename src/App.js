@@ -155,10 +155,9 @@ class App extends Component {
                   },
                 ],
               ],
-    dwarf : [
-             {number: 1, level: 0, used: false}, 
-             {number: 2, level: 0, used: false}
-
+    dwarves : [
+             {id: 1, level: 0, used: false}, 
+             {id: 2, level: 0, used: false}
             ],
     personal : [{
                   stableCount: 3,
@@ -457,24 +456,25 @@ class App extends Component {
 
   handleActionClick = mgrid => 
     e => { 
-      e.preventDefault(mgrid);
-        this.setState(prevState => ({
-          maingame: prevState.maingame.map(
-        row => row.map(el => 
-          el.id === mgrid.id ? { ...el, taken: true } : el
-          )
-        )}))
+    e.preventDefault(mgrid);
+      this.setState(prevState => ({
+        maingame: prevState.maingame.map(
+      row => row.map(el => 
+        el.id === mgrid.id ? { ...el, taken: true } : el
+        )),
+        turnCount : prevState.turnCount + 1
+      }))
+  }
 
-        this.setState(state =>{
-          return {turnCount : state.turnCount + 1}
-        })
-    }
-
-
-
+    handleClickDwarves = dwarf => {
+      this.setState({ dwarves: this.state.dwarves.map(
+        e => e.id === dwarf ? { used: true } : e
+      )
+      })
+      }
 
   render() {
-    console.log(this.state)
+    console.log("me dwarves", this.state.dwarves)
     return (
         <div className="App">
         <h1>Caverna</h1>
@@ -527,11 +527,13 @@ class App extends Component {
                 <h3>Personal Supply</h3>
 
                 
-                  <div className="Dwarves">
-                    {this.state.dwarf.map((idx) => (
+                <div className="Dwarves">
+                    {this.state.dwarves.map((dwarf, idx) => (
                       <div key={idx}>
                           <Dwarf 
-                          />
+                            handleClickDwarves={this.handleClickDwarves}
+                            {...dwarf}
+                            />
                       </div>
                     ))}
                   </div>

@@ -14,12 +14,22 @@ export class Dwarf extends React.Component {
     }
   } 
 
-  render() {
-    return(
-      <div style={this.divStyle()}>
-      </div>
-    )
-  }
-}
+      render() {
+        return(
+          <div 
+          style={this.divStyle()}
+          onClick={() => this.props.handleClickDwarves(this.props.id)}>
+          </div>
+        )
+      }
+    }
+
+      // <div 
+      // style={this.divStyle()}
+      // onClick={this.props.handleClickDwarves}>
+      // </div>    
+      // )
+  // }
+// }
 
 export default Dwarf
