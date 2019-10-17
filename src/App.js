@@ -468,7 +468,7 @@ class App extends Component {
 
     handleClickDwarves = dwarf => {
       this.setState({ dwarves: this.state.dwarves.map(
-        e => e.id === dwarf ? { used: true } : e
+        e => e.id === dwarf ? { ...e, selectedDwarf : e, used: true} : e
       )
       })
       }
