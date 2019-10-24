@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import './App.css'
+
 export class MainGame extends Component {
 renderGoods = () => {
   if(this.props.mgrid.hasGoods && this.props.mgrid.stoneCount){
@@ -29,7 +30,8 @@ onCardClick = () => {
   this.props.onClick(this.props.mgrid);
 }
 
-  render() {
+
+  render() {    
       return (
         <div className="FullGridStyle">
             <div className="MainGameStyle" onClick={this.onCardClick}>

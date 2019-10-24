@@ -10,6 +10,7 @@ class App extends Component {
   state = {
     turnCount : 0,
     selectedDwarf : null,
+    storedGood: null,
     maingame: [
                 [
                   {
@@ -17,7 +18,7 @@ class App extends Component {
                     title: 'Drift Mining',
                     hasGoods: true,
                     type: 'Stone',
-                    stoneCount: 1,
+                    stoneCount: 3,
                     taken: false
                   },
                   {
@@ -33,7 +34,7 @@ class App extends Component {
                     title: 'Starting Player',
                     hasGoods: true,
                     type: 'Food',
-                    foodcount: 1,
+                    foodCount: 1,
                     taken: false
                   },
                   {
@@ -456,39 +457,47 @@ class App extends Component {
   }
 
 
-  // Action Spaces
   handleActionClick = mgrid => {
-    // return e => { 
-    //   e.preventDefault(mgrid);
+    this.state.maingame.map(row => 
+      row.map(action =>
+        action.id === mgrid.id ? console.log(action.id) : null
+        )
+      )
+
     const dwarves = this.state.dwarves.map(dwarf =>
       dwarf.id === this.state.selectedDwarfId
         ? { ...dwarf, used: true}
         : dwarf
     )
+
+    const actionSpaceObj = this.state.maingame.flat().find(v => {
+      return v.id === mgrid.id;
+    });
+    console.log(actionSpaceObj);
+
     const selectedDwarf = dwarves.find(dwarf => dwarf.id === this.state.selectedDwarfId);
+
     this.setState(prevState => ({
       maingame: prevState.maingame.map(
         row => row.map(el => 
-          el.id === mgrid.id ? { ...el, taken: true, dwarf: selectedDwarf } : el,
-      )),
+          el.id === mgrid.id ? { ...el, 
+            taken: true, 
+            dwarf: selectedDwarf, 
+            } : el,
+        )
+      ),
       turnCount: prevState.turnCount + 1,
       dwarves: dwarves,
-      selectedDwarfId: null,
+      selectedDwarfId: null, 
     }))
   }
 
-
-
-  // Selecting Dwarves
-    handleClickDwarves = dwarfId => {
-      // this.setState({ dwarves: this.state.dwarves.map(
-      //   e => e.id === dwarf ? { ...e}  : e
-      // )})
-      this.setState({ selectedDwarfId : dwarfId})
-    }
+handleClickDwarves = dwarfId => {
+  this.setState({ selectedDwarfId : dwarfId})
+}
 
   render() {
-    console.log(this.state.selectedDwarf)
+    console.log(this.state)
     return (
       <div className="App">
       <h1>Caverna</h1>
